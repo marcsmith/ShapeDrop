@@ -32,6 +32,7 @@
 		45D741B013DE587500E3D04E /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45D741AF13DE587500E3D04E /* Capture.bundle */; };
 		45D741B213DE587500E3D04E /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45D741B113DE587500E3D04E /* PhoneGap.plist */; };
 		45D741B613DE587500E3D04E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D741B513DE587500E3D04E /* AppDelegate.m */; };
+		45D741BF13DE593F00E3D04E /* www in Resources */ = {isa = PBXBuildFile; fileRef = 45D741BE13DE593F00E3D04E /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +50,10 @@
 		45D7418F13DE587400E3D04E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		45D7419113DE587400E3D04E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		45D7419313DE587400E3D04E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		45D7419713DE587500E3D04E /* ShapeDrop-Info.plist */ = {isa = PBXFileReference; path = "ShapeDrop-Info.plist"; sourceTree = "<group>"; };
+		45D7419713DE587500E3D04E /* ShapeDrop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShapeDrop-Info.plist"; sourceTree = "<group>"; };
 		45D7419913DE587500E3D04E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45D7419B13DE587500E3D04E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45D7419D13DE587500E3D04E /* ShapeDrop-Prefix.pch */ = {isa = PBXFileReference; path = "ShapeDrop-Prefix.pch"; sourceTree = "<group>"; };
+		45D7419D13DE587500E3D04E /* ShapeDrop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShapeDrop-Prefix.pch"; sourceTree = "<group>"; };
 		45D7419E13DE587500E3D04E /* PhoneGap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneGap.framework; path = /Users/Shared/PhoneGap/Frameworks/PhoneGap.framework; sourceTree = "<absolute>"; };
 		45D741A213DE587500E3D04E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
 		45D741A413DE587500E3D04E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
@@ -62,9 +63,10 @@
 		45D741AD13DE587500E3D04E /* Default~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~ipad.png"; path = "Resources/splash/Default~ipad.png"; sourceTree = "<group>"; };
 		45D741AF13DE587500E3D04E /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
 		45D741B113DE587500E3D04E /* PhoneGap.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PhoneGap.plist; sourceTree = "<group>"; };
-		45D741B413DE587500E3D04E /* AppDelegate.h */ = {isa = PBXFileReference; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		45D741B413DE587500E3D04E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		45D741B513DE587500E3D04E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		45D741B813DE587500E3D04E /* README */ = {isa = PBXFileReference; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		45D741B813DE587500E3D04E /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		45D741BE13DE593F00E3D04E /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		45D7416913DE587400E3D04E = {
 			isa = PBXGroup;
 			children = (
+				45D741BE13DE593F00E3D04E /* www */,
 				45D7419513DE587500E3D04E /* ShapeDrop */,
 				45D7417A13DE587400E3D04E /* Frameworks */,
 				45D7417813DE587400E3D04E /* Products */,
@@ -266,6 +269,7 @@
 				45D741AE13DE587500E3D04E /* Default~ipad.png in Resources */,
 				45D741B013DE587500E3D04E /* Capture.bundle in Resources */,
 				45D741B213DE587500E3D04E /* PhoneGap.plist in Resources */,
+				45D741BF13DE593F00E3D04E /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +377,9 @@
 				GCC_PREFIX_HEADER = "ShapeDrop/ShapeDrop-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
 				INFOPLIST_FILE = "ShapeDrop/ShapeDrop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,7 +395,9 @@
 				GCC_PREFIX_HEADER = "ShapeDrop/ShapeDrop-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
 				INFOPLIST_FILE = "ShapeDrop/ShapeDrop-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

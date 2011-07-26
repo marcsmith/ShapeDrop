@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="css/ipad.css" type="text/css" />
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/iphone.css" type="text/css" />
+
+    <script src="js/jquery.min.js"></script>
+	<script src="js/raphael-min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/phonegap.0.9.5.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+	var rad = Math.PI / 180;
+	Raphael.fn.sector = function(cx, cy, r, startAngle, endAngle, params) {
+	    var x1 = cx + r * Math.cos(-startAngle * rad),
+	        x2 = cx + r * Math.cos(-endAngle * rad),
+	        y1 = cy + r * Math.sin(-startAngle * rad),
+	        y2 = cy + r * Math.sin(-endAngle * rad);
+	    return this.path(["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "z"]).attr(params);
+	};
+
+
+	// If you want to prevent dragging, uncomment this section
+	/*
+	function preventBehavior(e) 
+	{ 
+      e.preventDefault(); 
+    };
+	document.addEventListener("touchmove", preventBehavior, false);
+	*/
+	
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	/*
+	function handleOpenURL(url)
+	{
+		// TODO: do something with the url passed in.
+	}
+	*/
+	
+	function onBodyLoad()
+	{
+		document.addEventListener("deviceready",onDeviceReady,false);
+	}
+	
+	/* When this function is called, PhoneGap has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+		// do your thing!
+		//navigator.notification.alert("PhoneGap is working")
+	}
+    
+    </script>
+  </head>
+  <body onload="onBodyLoad()">
+
+		
+		
+		<div id="piggy"></div>
+		
+		
+		
+		
+		
+		
+		
+
+
+<script>
+var pig_canvas = Raphael("piggy", 900, 900);
+var pig	= {
+	torso: 	{
+		main: {}
+	},
+	head: 	{
+		main: {},
+		eyes: {
+			main: {},
+			left: {
+				main: {},
+				pupil: {}
+			},
+			right: {
+				main: {},
+				pupil: {}
+			}
+		},
+		nose: 	{
+			main: {},
+			nostrils: {
+				main: {},
+				left: {},
+				right: {}
+			}
+		},
+	},
+	feet: 	{
+		main: {},
+		left: {},
+		right: {}
+	}
+};
+
+pig.torso.main = pig_canvas.ellipse(150, 220, 95, 100).attr("fill", "rgba(255, 170, 170)");
+$(pig.torso.main).data({origx: 150, origy: 220});
+
+pig.head.main = pig_canvas.circle(150, 180, 70).attr("fill", "rgba(255, 170, 170)");
+$(pig.torso.main).data({origx: 150, origy: 180});
+
+pig.head.eyes.left.main = pig_canvas.ellipse(130, 150, 16, 20).attr("fill", "rgba(255, 255, 255)");
+pig.head.eyes.right.main = pig_canvas.ellipse(170, 150, 16, 20).attr("fill", "rgba(255, 255, 255)");
+pig.head.eyes.left.pupil = pig_canvas.ellipse(130, 160, 3, 5).attr("fill", "rgba(0, 0, 0)");
+pig.head.eyes.right.pupil = pig_canvas.ellipse(170, 160, 3, 5).attr("fill", "rgba(0, 0, 0)");
+
+pig.head.nose.main = pig_canvas.ellipse(150, 200, 20, 17).attr("fill", "rgba(255, 170, 170)");
+
+pig.head.nose.nostrils.left = pig_canvas.circle(143, 207, 5).attr("fill", "rgba(0, 0, 0)");
+pig.head.nose.nostrils.right = pig_canvas.circle(157, 207, 5).attr("fill", "rgba(0, 0, 0)");
+
+pig.feet.left = pig_canvas.sector(120, 325, 24, 0, 180, {"fill": "rgba(65, 36, 36)"});
+pig.feet.right = pig_canvas.sector(180, 325, 24, 0, 180, {"fill": "rgba(65, 36, 36)"});
+
+
+//	head.attr("fill", "rgba(255, 170, 170)").animate({
+//    "50%": {cx: 70, r: 120, callback: fiddy},
+//    "100%": {cx: 50, r: 50}
+//}, 2000);
+//setTimeout(function () { head.stop(); }, 1000);
+
+//head.animate({cx: 350, r: 40}, 1000, "bounce");
+//torso.animateWith(head, {cx: 350}, 1000, ">");
+
+//pig.head.eyes.left.pupil.animate({scale: 1.4}, 2000, "elastic");
+//pig.head.eyes.right.pupil.animate({scale: 1.4}, 2000, "elastic");
+
+/*
+pig.head.eyes.left.pupil.animate({
+		scale: [1.1, 1.1, 130, 215]
+}, 1500, "elastic");
+pig.head.eyes.right.pupil.animate({
+		scale: [1.1, 1.1, 170, 215]
+}, 1500, "elastic");
+*/
+//pig.head.eyes.right.pupil = pig_canvas.ellipse(170, 165, 3, 5).attr("fill", "rgba(0, 0, 0)");
+
+
+//pig_canvas.sector(50, 100, 30, 0, 180);
+
+function fiddy() {
+	console.log('heynow!');
+}
+
+
+
+var start = function () {
+    // storing original coordinates
+    this.ox = this.attr("cx");
+    this.oy = this.attr("cy");
+    this.attr({opacity: 0.5});
+},
+move = function (dx, dy) {
+    // move will be called with dx and dy
+	if(this.type==='path') {
+		var trans_x = dx-this.ox;
+		var trans_y = dy-this.oy;
+		this.translate(trans_x, trans_y);
+		this.ox = dx;
+		this.oy = dy;
+	} else {
+    	this.attr({cx: this.ox + dx, cy: this.oy + dy});
+	}
+
+	console.log(this);
+	var origx = $(this).data('origx'),
+		origy = $(this).data('origy');
+	if( (Math.abs(this.ox+dx-origx) < 20) && (Math.abs(this.oy+dy-origy) < 20) ) {
+//		console.log("HEHEHHEHE");
+		this.attr({cx: origx, cy: origy})
+	} else {
+	//	console.log(this.ox, dx);
+	}
+},
+up = function () {
+    // restoring state
+    this.attr({opacity: 1.0});
+};
+
+var piggy = pig_canvas.set();
+piggy.push(pig.torso.main, pig.head.main, pig.head.eyes.left.main, pig.head.eyes.right.main, pig.head.eyes.left.pupil, pig.head.eyes.right.pupil, pig.head.nose.main, pig.head.nose.nostrils.left, pig.head.nose.nostrils.right, pig.feet.left, pig.feet.right);
+piggy.drag(move, start, up);
+
+
+
+//pig.attr("fill", "rgba(255, 170, 170)");
+
+</script>		
+		
+  </body>
+</html>
